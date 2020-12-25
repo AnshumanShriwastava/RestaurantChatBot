@@ -1,0 +1,118 @@
+
+version: "2.0"
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: chennai
+  - slot_was_set:
+    - location: chennai
+  - action: action_verify_location
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_budget
+  - intent: restaurant_search
+    entities:
+    - budget: low
+  - slot_was_set:
+    - budget: low
+  - action: action_search_restaurants
+  - action: utter_email_request
+  - intent: email_id_send
+    entities:
+    - email: navya.sailu18@gmail.com
+  - slot_was_set:
+    - email: navya.sailu18@gmail.com
+  - action: action_send_details_to_email
+  - intent: affirm
+  - action: utter_goodbye
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: bombay
+  - slot_was_set:
+    - location: bombay
+  - action: action_verify_location
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_budget
+  - intent: restaurant_search
+    entities:
+    - budget: high
+  - slot_was_set:
+    - budget: high
+  - action: action_search_restaurants
+  - action: utter_email_request
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: delhi
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: delhi
+  - action: utter_ask_budget
+  - intent: restaurant_search
+    entities:
+    - budget: low
+  - slot_was_set:
+    - budget: low
+  - action: action_search_restaurants
+  - action: utter_email_request
+  - intent: email_id_send
+    entities:
+    - email: navya.sailkhd@gmail.com
+  - slot_was_set:
+    - email: navya.sailkhd@gmail.com
+  - action: action_send_details_to_email
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - budget: low
+  - slot_was_set:
+    - budget: low
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: delhi
+  - slot_was_set:
+    - location: delhi
+  - action: action_verify_location
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: action_search_restaurants
+  - action: utter_email_request
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: utter_goodbye

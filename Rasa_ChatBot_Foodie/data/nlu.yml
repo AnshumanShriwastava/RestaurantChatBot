@@ -1,0 +1,29 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - hgjhf
+- intent: restaurant_search
+  examples: |
+    - find me restaurants
+    - [chennai](location)
+    - [chinese](cuisine)
+    - [low](budget)
+    - find restaurants near me
+    - [bombay](location)
+    - [high](budget)
+    - find me some [chinese](cuisine) restaurants in [delhi](location)
+    - find [low](budget) budget restaurants near me
+    - [delhi](location)
+    - italina
+    - [chinese](cuisine)
+- intent: email_id_send
+  examples: |
+    - [navya.sailu18@gmail.com](email)
+    - [navya.sailkhd@gmail.com](email)
+- intent: affirm
+  examples: |
+    - thank you
+    - thanks
