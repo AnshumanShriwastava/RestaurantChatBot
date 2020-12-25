@@ -11,7 +11,6 @@
 - great choice
 - sounds really good
 - thanks
-- thanks
 
 ## intent:goodbye
 - bye
@@ -42,6 +41,10 @@
 - I am searching for a dinner spot
 - I am looking for some restaurants in [Delhi](location).
 - I am looking for some restaurants in [Bangalore](location)
+- I am looking for some restaurants in [Delhi](location).
+- I am looking for some restaurants in [Bangalore](location)
+- I am looking for some restaurants in [Vasai-Virar City](location)
+- I am looking for some restaurants in [warangal](location)
 - Find me some restaurants in [Muzaffarpur](location)
 - show me [chinese](cuisine) restaurants
 - show me [chines](cuisine:chinese) restaurants in the [New Delhi](location:Delhi)
@@ -75,11 +78,233 @@
 - [delhi](location)
 - please find me a restaurant in [ahmedabad](location)
 - please show me a few [italian](cuisine) restaurants in [bangalore](location)
-- [Lesser than Rs. 300](budget:low)
-- [Rs. 300 to 700](budget:medium)
-- [More than 700](budget:high)
+- [low](budget:low)
+- [medium](budget:medium)
+- [high](budget:high)
 
 ## intent:email_id_send
 - [anshuman@gmail.com](email)
 - [anshu5492@gmail.com](email)
 
+## regex:greet
+- hey[^\s]*
+
+## regex:email
+- ^([\w\.]+)@([\w]+)\.([A-z]{2,3})$
+
+## regex:pincode
+- [0-9]{6}
+
+## lookup:location
+- Ahmedabad
+- Bengaluru
+- Chennai
+- Delhi
+- Hyderabad
+- Kolkata
+- Mumbai
+- Pune
+- Agra
+- Ajmer
+- Aligarh
+- Amravati
+- Amritsar
+- Asansol
+- Aurangabad
+- Bareilly
+- Belgaum
+- Bhavnagar
+- Bhiwandi
+- Bhopal
+- Bhubaneswar
+- Bikaner
+- Bilaspur
+- Bokaro Steel City
+- Chandigarh
+- Coimbatore
+- Cuttack
+- Dehradun
+- Dhanbad
+- Bhilai
+- Durgapur
+- Dindigul
+- Erode
+- Faridabad
+- Firozabad
+- Ghaziabad
+- Gorakhpur
+- Gulbarga
+- Guntur
+- Gwalior
+- Gurgaon
+- Guwahati
+- Hamirpur
+- Hubli–Dharwad
+- Indore
+- Jabalpur
+- Jaipur
+- Jalandhar
+- Jammu
+- Jamnagar
+- Jamshedpur
+- Jhansi
+- Jodhpur
+- Kakinada
+- Kannur
+- Kanpur
+- Karnal
+- Kochi
+- Kolhapur
+- Kollam
+- Kozhikode
+- Kurnool
+- Ludhiana
+- Lucknow
+- Madurai
+- Malappuram
+- Mathura
+- Mangalore
+- Meerut
+- Moradabad
+- Mysore
+- Nagpur
+- Nanded
+- Nashik
+- Nellore
+- Noida
+- Patna
+- Pondicherry
+- Purulia
+- Prayagraj
+- Raipur
+- Rajkot
+- Rajahmundry
+- Ranchi
+- Rourkela
+- Salem
+- Sangli
+- Shimla
+- Siliguri
+- Solapur
+- Srinagar
+- Surat
+- Thanjavur
+- Thiruvananthapuram
+- Thrissur
+- Tiruchirappalli
+- Tirunelveli
+- Ujjain
+- Bijapur
+- Vadodara
+- Varanasi
+- Vasai-Virar City
+- Vijayawada
+- Visakhapatnam
+- Vellore
+- Warangal
+- ahmedabad
+- bengaluru
+- chennai
+- delhi
+- hyderabad
+- kolkata
+- mumbai
+- pune
+- agra
+- ajmer
+- aligarh
+- amravati
+- amritsar
+- asansol
+- aurangabad
+- bareilly
+- belgaum
+- bhavnagar
+- bhiwandi
+- bhopal
+- bhubaneswar
+- bikaner
+- bilaspur
+- bokaro steel city
+- chandigarh
+- coimbatore
+- cuttack
+- dehradun
+- dhanbad
+- bhilai
+- durgapur
+- dindigul
+- erode
+- faridabad
+- firozabad
+- ghaziabad
+- gorakhpur
+- gulbarga
+- guntur
+- gwalior
+- gurgaon
+- guwahati
+- hamirpur
+- hubli–dharwad
+- indore
+- jabalpur
+- jaipur
+- jalandhar
+- jammu
+- jamnagar
+- jamshedpur
+- jhansi
+- jodhpur
+- kakinada
+- kannur
+- kanpur
+- karnal
+- kochi
+- kolhapur
+- kollam
+- kozhikode
+- kurnool
+- ludhiana
+- lucknow
+- madurai
+- malappuram
+- mathura
+- mangalore
+- meerut
+- moradabad
+- mysore
+- nagpur
+- nanded
+- nashik
+- nellore
+- noida
+- patna
+- pondicherry
+- purulia
+- prayagraj
+- raipur
+- rajkot
+- rajahmundry
+- ranchi
+- rourkela
+- salem
+- sangli
+- shimla
+- siliguri
+- solapur
+- srinagar
+- surat
+- thanjavur
+- thiruvananthapuram
+- thrissur
+- tiruchirappalli
+- tirunelveli
+- ujjain
+- bijapur
+- vadodara
+- varanasi
+- vasai-virar city
+- vijayawada
+- visakhapatnam
+- vellore
+- warangal
