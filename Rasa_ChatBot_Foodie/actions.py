@@ -7,6 +7,10 @@ from rasa_sdk.events import SlotSet
 import zomatopy
 import json
 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 class ActionSearchRestaurants(Action):
 	def name(self):
 		return 'action_search_restaurants'
@@ -111,9 +115,43 @@ class ActionSendDetailsToEmail(Action):
 		return 'action_send_details_to_email'
 
 	def run(self, dispatcher, tracker, domain):
+		# Get slot of email id of user
 		email = tracker.get_slot('email')
-		dispatcher.utter_message("Email send to " + email)
-	
+		# check if email id is of proper format
+		emailformatOk = True
+		
+		if emailformatOk == False:
+			dispatcher.utter_message("Please provide correct email address in form xxxxxxx@abc.com")
+		else:
+			#The mail addresses and password
+			sender_address = 'anshumanshriwas.dml17@iiitb.net'
+			sender_pass = 'anshu_5492'
+			receiver_address = email
+
+			#Get email content
+			mail_content = tracker.get_slot('emailcontent')
+
+			#Setup the MIME
+			message = MIMEMultipart()
+			message['From'] = sender_address
+			message['To'] = receiver_address
+			message['Subject'] = 'Restaurant Details from Foodie!!'
+			#The body and the attachments for the mail
+			message.attach(MIMEText(mail_content, 'plain'))
+			#Create SMTP session for sending the mail
+			#use gmail with port
+			session = smtplib.SMTP('smtp.gmail.com', 587) 
+			#enable security
+			session.starttls() 
+			#login with mail_id and password
+			session.login(sender_address, sender_pass)
+			#convert whole message as simple string
+			text = message.as_string()
+			session.sendmail(sender_address, receiver_address, text)
+			session.quit()
+			dispatcher.utter_message("Email sent to " + email)
+
+
 		return
 
 
