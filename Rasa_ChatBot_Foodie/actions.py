@@ -20,7 +20,6 @@ class ActionSearchRestaurants(Action):
                 
         def run(self, dispatcher, tracker, domain):
 
-
                 #creating custom function to accomodate sort,order,start,limit
                 def restaurant_search_custom(query="", latitude="", longitude="", cuisines="", limit=20, start=0, sort="", order=""):
                     """
@@ -39,31 +38,31 @@ class ActionSearchRestaurants(Action):
                     jsonParsed  = json.loads(r)
                     return jsonParsed['restaurants']
                         
-
                 #filtering retaurants by rating, budget
                 def restraunt_search_rating_order(latitude="", longitude="", cuisines="", lowercost=0, highercost=999999):
 
-                    restraunts = []
+                    restaurants = []
                     start = 0
                     sort = "rating"
-                    order = "desc" 
-                    while(len(restraunts) < 10):
+                    order = "desc"
+                    stopsearchcounter = 0 
+                    # Allowing max 5 tries (20*5 = 100 restuarants) in order to avoid timeout error
+                    while((len(restaurants) < 10) and (stopsearchcounter < 5)):
                             returnList = restaurant_search_custom("", lat, lon, str(cuisines_dict.get(cuisine)), 20,start,sort,order)
                             # iterate list to add items if fall in category
                             for returnItem in returnList:
                                     #jsonParsed  = json.loads(returnItem)
-                                    if((len(restraunts) < 10) and (lowercost <= returnItem['restaurant']['average_cost_for_two']) and (returnItem['restaurant']['average_cost_for_two'] <= highercost)):
-                                            restraunts.append(returnItem)
-                            start = start + 20                
+                                    if((len(restaurants) < 10) and (lowercost <= returnItem['restaurant']['average_cost_for_two']) and (returnItem['restaurant']['average_cost_for_two'] <= highercost)):
+                                            restaurants.append(returnItem)
+                            start = start + 20
+                            stopsearchcounter = stopsearchcounter + 1               
 
-                    return restraunts 
+                    return restaurants 
                 
                 #Init zomato object
                 config={ "user_key":"279658393d35002cb45c944d0dd06691"} #New Generated id added
-                #config = {'user_key':"7282b8debe14a5612b066aa96edeccaa"}
                 zomato = zomatopy.initialize_app(config)
-
-                
+               
                 #Get location, cuisine, budget slot
                 loc = tracker.get_slot('location')
                 cuisine = tracker.get_slot('cuisine')
@@ -74,8 +73,7 @@ class ActionSearchRestaurants(Action):
                 d1 = json.loads(location_detail)
                 lat=d1["location_suggestions"][0]["latitude"]
                 lon=d1["location_suggestions"][0]["longitude"]
-                                       
-                
+                                     
                 # This dictionary is created from CusineIdCode.ipynb file
                 cuisines_dict={'Chinese':25,'Mexican':73,'Italian':55,'American':1,'South Indian':85,'North Indian':50}
 
@@ -94,27 +92,21 @@ class ActionSearchRestaurants(Action):
                 results = restraunt_search_rating_order(lat, lon, str(cuisines_dict.get(cuisine)),lowercost, highercost)
                 response_utter=""
                 response_email=""
-                if len(results) == 0:
-                        response= "no results"
+                if (len(results) == 0):
+                        response_utter= "No results found for given location and cusine selection in this budget"
                 else:
                         count = 1
+                        response_utter = "Showing you top rated restaurants:\n"
+                        response_email = "Showing you top rated restaurants:\n"
                         for restaurant in results:
                                 if(count <= 10):
                                         response_email=response_email+str(count)+". "+ "Name: "+restaurant['restaurant']['name']+ " Address: "+ restaurant['restaurant']['location']['address']+" rating: "+ restaurant['restaurant']['user_rating']['aggregate_rating']+" Budget: "+ str(restaurant['restaurant']['average_cost_for_two'])+"\n"
                                         if(count <= 5):
-                                                response_utter=response_utter+str(count)+". "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+" with average rating "+ restaurant['restaurant']['user_rating']['aggregate_rating']+"\n"
+                                                response_utter=response_utter+str(count)+". "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+" has been rated "+ restaurant['restaurant']['user_rating']['aggregate_rating']+"\n"
                                         count =  count + 1
                 
-                        dispatcher.utter_message(response_utter)
-                
-
+                dispatcher.utter_message(response_utter)
                 return [SlotSet('emailcontent',response_email)]
-
-
-                
-        
-
-
 
 class ActionVerifyLocation(Action):
 	def name(self):
@@ -183,7 +175,6 @@ class ActionSendDetailsToEmail(Action):
 			session.sendmail(sender_address, receiver_address, text)
 			session.quit()
 			dispatcher.utter_message("Email sent to " + email)
-
 
 		return
 
