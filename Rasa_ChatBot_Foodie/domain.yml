@@ -7,6 +7,7 @@ actions:
 - utter_ask_cuisine
 - utter_ask_budget
 - utter_email_request
+- utter_ask_email_id
 - utter_default
 - utter_goodbye
 
@@ -21,6 +22,7 @@ intents:
 - restaurant_search
 - affirm
 - goodbye
+- deny
 - email_id_send
 
 responses:
@@ -46,7 +48,9 @@ responses:
         - Rs. 300 to 700
         - More than 700
   utter_email_request:
-  - text: Please give your email id
+  - text: Should I send you details of all the restaurants on email?
+  utter_ask_email_id:
+  - text: To what email id should I send it to?
   utter_default:
   - text: i cannot understand
   utter_goodbye:

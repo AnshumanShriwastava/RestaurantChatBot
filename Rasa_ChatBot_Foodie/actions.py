@@ -9,6 +9,10 @@ import json
 import requests
 import ast
 
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 class ActionSearchRestaurants(Action):
         def name(self):
                 return 'action_search_restaurants'
@@ -113,38 +117,73 @@ class ActionSearchRestaurants(Action):
 
 
 class ActionVerifyLocation(Action):
-        def name(self):
-                return 'action_verify_location'
+	def name(self):
+		return 'action_verify_location'
 
-        def run(self, dispatcher, tracker, domain):
-                city = tracker.get_slot('location')
+	def run(self, dispatcher, tracker, domain):
+		city = tracker.get_slot('location')
 
-                tier1_cities = ['Ahmedabad', 'Bengaluru', 'Chennai', 'Delhi', 'Hyderabad', 'Kolkata', 'Mumbai', 'Pune']
-                tier2_cities = [ 'Agra', 'Ajmer', 'Aligarh', 'Amravati', 'Amritsar', 'Asansol', 'Aurangabad', 'Bareilly', 'Belgaum', 'Bhavnagar', 'Bhiwandi', 
-                                                'Bhopal', 'Bhubaneswar', 'Bikaner', 'Bilaspur', 'Bokaro Steel City', 'Chandigarh', 'Coimbatore', 'Cuttack', 'Dehradun', 'Dhanbad', 'Bhilai', 'Durgapur', 'Dindigul', 'Erode', 
-                                                'Faridabad', 'Firozabad', 'Ghaziabad', 'Gorakhpur', 'Gulbarga', 'Guntur', 'Gwalior', 'Gurgaon', 'Guwahati', 'Hamirpur', 'Hubli–Dharwad', 'Indore', 'Jabalpur', 'Jaipur', 
-                                                'Jalandhar', 'Jammu', 'Jamnagar', 'Jamshedpur', 'Jhansi', 'Jodhpur', 'Kakinada', 'Kannur', 'Kanpur', 'Karnal', 'Kochi', 'Kolhapur', 'Kollam', 
-                                                'Kozhikode', 'Kurnool', 'Ludhiana', 'Lucknow', 'Madurai',
-                                                'Malappuram', 'Mathura', 'Mangalore', 'Meerut', 'Moradabad', 'Mysore', 'Nagpur', 'Nanded', 'Nashik', 'Nellore', 'Noida', 
-                                                'Patna', 'Pondicherry', 'Purulia', 'Prayagraj', 'Raipur', 'Rajkot',
-                                                'Rajahmundry', 'Ranchi', 'Rourkela', 'Salem', 'Sangli', 'Shimla', 'Siliguri', 'Solapur', 'Srinagar', 'Surat', 'Thanjavur', 'Thiruvananthapuram', 'Thrissur',
-                                                'Tiruchirappalli', 'Tirunelveli', 'Ujjain', 'Bijapur', 'Vadodara', 'Varanasi', 'Vasai-Virar City', 'Vijayawada', 'Visakhapatnam', 'Vellore', 'Warangal']
+		tier1_cities = ['Ahmedabad', 'Bengaluru', 'Chennai', 'Delhi', 'Hyderabad', 'Kolkata', 'Mumbai', 'Pune']
+		tier2_cities = [ 'Agra', 'Ajmer', 'Aligarh', 'Amravati', 'Amritsar', 'Asansol', 'Aurangabad', 'Bareilly', 'Belgaum', 'Bhavnagar', 'Bhiwandi', 
+						'Bhopal', 'Bhubaneswar', 'Bikaner', 'Bilaspur', 'Bokaro Steel City', 'Chandigarh', 'Coimbatore', 'Cuttack', 'Dehradun', 'Dhanbad', 'Bhilai', 'Durgapur', 'Dindigul', 'Erode', 
+						'Faridabad', 'Firozabad', 'Ghaziabad', 'Gorakhpur', 'Gulbarga', 'Guntur', 'Gwalior', 'Gurgaon', 'Guwahati', 'Hamirpur', 'Hubli–Dharwad', 'Indore', 'Jabalpur', 'Jaipur', 
+						'Jalandhar', 'Jammu', 'Jamnagar', 'Jamshedpur', 'Jhansi', 'Jodhpur', 'Kakinada', 'Kannur', 'Kanpur', 'Karnal', 'Kochi', 'Kolhapur', 'Kollam', 
+						'Kozhikode', 'Kurnool', 'Ludhiana', 'Lucknow', 'Madurai',
+			 			'Malappuram', 'Mathura', 'Mangalore', 'Meerut', 'Moradabad', 'Mysore', 'Nagpur', 'Nanded', 'Nashik', 'Nellore', 'Noida', 
+						'Patna', 'Pondicherry', 'Purulia', 'Prayagraj', 'Raipur', 'Rajkot',
+		  				'Rajahmundry', 'Ranchi', 'Rourkela', 'Salem', 'Sangli', 'Shimla', 'Siliguri', 'Solapur', 'Srinagar', 'Surat', 'Thanjavur', 'Thiruvananthapuram', 'Thrissur',
+		 				'Tiruchirappalli', 'Tirunelveli', 'Ujjain', 'Bijapur', 'Vadodara', 'Varanasi', 'Vasai-Virar City', 'Vijayawada', 'Visakhapatnam', 'Vellore', 'Warangal']
 
-                tier1_cities = [name.lower() for name in tier1_cities]
-                tier2_cities = [name.lower() for name in tier2_cities]
+		tier1_cities = [name.lower() for name in tier1_cities]
+		tier2_cities = [name.lower() for name in tier2_cities]
 
-                if (city.lower() not in tier1_cities) and (city.lower() not in tier2_cities):
-                        dispatcher.utter_message("We do not operate in that area yet")
-                        city = None
+		if (city.lower() not in tier1_cities) and (city.lower() not in tier2_cities):
+			dispatcher.utter_message("We do not operate in that area yet")
+			city = None
 
-                return [SlotSet('location',city)]
+		return [SlotSet('location',city)]
 
 class ActionSendDetailsToEmail(Action):
-        def name(self):
-                return 'action_send_details_to_email'
+	def name(self):
+		return 'action_send_details_to_email'
 
-        def run(self, dispatcher, tracker, domain):
-                email = tracker.get_slot('email')
-                dispatcher.utter_message("Email send to " + email)
-        
-                return
+	def run(self, dispatcher, tracker, domain):
+		# Get slot of email id of user
+		email = tracker.get_slot('email')
+		# check if email id is of proper format
+		emailformatOk = True
+		
+		if emailformatOk == False:
+			dispatcher.utter_message("Please provide correct email address in form xxxxxxx@abc.com")
+		else:
+			#The mail addresses and password
+			sender_address = 'anshumanshriwas.dml17@iiitb.net'
+			sender_pass = 'anshu_5492'
+			receiver_address = email
+
+			#Get email content
+			mail_content = tracker.get_slot('emailcontent')
+
+			#Setup the MIME
+			message = MIMEMultipart()
+			message['From'] = sender_address
+			message['To'] = receiver_address
+			message['Subject'] = 'Restaurant Details from Foodie!!'
+			#The body and the attachments for the mail
+			message.attach(MIMEText(mail_content, 'plain'))
+			#Create SMTP session for sending the mail
+			#use gmail with port
+			session = smtplib.SMTP('smtp.gmail.com', 587) 
+			#enable security
+			session.starttls() 
+			#login with mail_id and password
+			session.login(sender_address, sender_pass)
+			#convert whole message as simple string
+			text = message.as_string()
+			session.sendmail(sender_address, receiver_address, text)
+			session.quit()
+			dispatcher.utter_message("Email sent to " + email)
+
+
+		return
+

@@ -36,6 +36,10 @@
 - hi
 - hello
 
+## intent:deny
+- no
+- no, thanks
+
 ## intent:restaurant_search
 - i'm looking for a place to eat
 - I want to grab lunch
@@ -80,6 +84,6 @@
 - [More than 700](budget:high)
 
 ## intent:email_id_send
-- [anshuman@gmail.com](email)
+- yes. Please send it to [anshu5492@gmail.com](email)
 - [anshu5492@gmail.com](email)
 
