@@ -96,11 +96,11 @@ class ActionSearchRestaurants(Action):
                         response_utter= "No results found for given location and cusine selection in this budget"
                 else:
                         count = 1
-                        response_utter = "Showing you top rated restaurants:\n"
-                        response_email = "Showing you top rated restaurants:\n"
+                        response_utter = "Showing you top rated " + cuisine+" restaurants in "+loc+" :\n\n"
+                        response_email = "Showing you top rated " + cuisine+" restaurants in "+loc+" :\n\n"
                         for restaurant in results:
                                 if(count <= 10):
-                                        response_email=response_email+str(count)+". "+ "Name: "+restaurant['restaurant']['name']+ " Address: "+ restaurant['restaurant']['location']['address']+" rating: "+ restaurant['restaurant']['user_rating']['aggregate_rating']+" Budget: "+ str(restaurant['restaurant']['average_cost_for_two'])+"\n"
+                                        response_email=response_email+str(count)+". "+ "    Name: "+restaurant['restaurant']['name']+ "     Address: "+ restaurant['restaurant']['location']['address']+"     Rating: "+ restaurant['restaurant']['user_rating']['aggregate_rating']+"     Budget for two: Rs"+ str(restaurant['restaurant']['average_cost_for_two'])+"\n"
                                         if(count <= 5):
                                                 response_utter=response_utter+str(count)+". "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+" has been rated "+ restaurant['restaurant']['user_rating']['aggregate_rating']+"\n"
                                         count =  count + 1
@@ -130,7 +130,7 @@ class ActionVerifyLocation(Action):
 		tier2_cities = [name.lower() for name in tier2_cities]
 
 		if (city.lower() not in tier1_cities) and (city.lower() not in tier2_cities):
-			dispatcher.utter_message("We do not operate in that area yet")
+			dispatcher.utter_message("sorry, we do not operate in that area yet")
 			city = None
 
 		return [SlotSet('location',city)]

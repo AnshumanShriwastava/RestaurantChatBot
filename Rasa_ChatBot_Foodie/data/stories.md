@@ -63,6 +63,38 @@
 * deny
 	- utter_goodbye
 
+## Path 4 - 1ask path
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "delhi", "cuisine": "chinese" }
+    - slot{"location": "delhi"}
+	 - action_verify_location
+	 - slot{"cuisine": "chinese"}
+	- utter_ask_budget
+* restaurant_search{"budget": "medium"}
+    - slot{"budget": "medium"}
+    - action_search_restaurants
+	- utter_email_request
+* deny
+	- utter_goodbye
+
+## Path 5 - no ask path
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search{"location": "delhi", "cuisine": "chinese" ,"budget": "medium"}
+    - slot{"location": "delhi"}
+	 - action_verify_location
+	 - slot{"cuisine": "chinese"}
+    - slot{"budget": "medium"}
+    - action_search_restaurants
+	- utter_email_request
+* deny
+	- utter_goodbye
+
 
 
 
