@@ -11,10 +11,16 @@
 - great choice
 - sounds really good
 - thanks
-- thanks
+- yea
+- hell yea
+- cool
+- nice
+- thats exactly what i need
+- thats what i need
 
 ## intent:goodbye
 - bye
+- thanks
 - goodbye
 - good bye
 - stop
@@ -22,6 +28,7 @@
 - farewell
 - Bye bye
 - have a good one
+- nice talking
 
 ## intent:greet
 - hey
@@ -32,13 +39,16 @@
 - good morning
 - good evening
 - dear sir
-- hi
-- hi
-- hello
+- good afternoon
+- Hola
+
 
 ## intent:deny
 - no
 - no, thanks
+- no thank you
+- nope
+- sorry no
 
 ## intent:restaurant_search
 - i'm looking for a place to eat
@@ -82,6 +92,312 @@
 - [Lesser than Rs. 300](budget:low)
 - [Rs. 300 to 700](budget:medium)
 - [More than 700](budget:high)
+- I am looking for some restaurants in [Delhi](location).
+- I am looking for some restaurants in [Bangalore](location)
+- I am looking for some restaurants in [Delhi](location).
+- I am looking for some restaurants in [Bangalore](location)
+- I am looking for some restaurants in [Vasai-Virar City](location)
+- I am looking for some restaurants in [warangal](location)
+- [low](budget:low)
+- [medium](budget:medium)
+- [high](budget:high)
+- [around 300 or less](budget:low)
+- [higher than 700](budget:high)
+- [above Rs 700](budget:high)
+- [below 300](budget:low)
+- looking for [medium cost](budget:medium) [chinese](cuisine) restaurants in [bokaro steel city](location)
+
+## synonym:Delhi
+- New Delhi
+- dhilli
+
+## synonym:bangalore
+- Bengaluru
+- banglor
+
+## synonym:chennai
+- madras
+- madrasa pattanam
+
+## synonym: South India
+- southindian
+- madrasi
+- sambar
+- idly
+- dosa place
+
+## synonym: North India
+- northindian
+- chapathi
+
+## synonym:chinese
+- chines
+- Chinese
+- Chines
+- noodles
+- chow mein
+- fried rice
+
+## synonym:italian
+- italy
+- italain
+- italean
+- pizza place
+- pasta
+
+## synonym:medium
+- Rs. 300 to 700
+- mid
+- moderate
+- around 400
+- around 500
+- 500
+- average
+- medium cost
+
+## synonym:high
+- above Rs 700
+- rich
+- high end
+- around 800
+- around 1000
+- luxary
+- higher than 1000
+- expensive
+- highend
+
+## synonym:low
+- below 300
+- cheap
+- pocket friendly
+- less expensive
+- around 100
+- low cost
+
+
+## regex:greet
+- hey[^\s]*
+- h[i]*
+
+## regex:email
+- ^([\w\.]+)@([\w]+)\.([A-z]{2,3})$
+
+## regex:pincode
+- [0-9]{6}
+
+## lookup:location
+- Ahmedabad
+- Bengaluru
+- Chennai
+- Delhi
+- Hyderabad
+- Kolkata
+- Mumbai
+- Pune
+- Agra
+- Ajmer
+- Aligarh
+- Amravati
+- Amritsar
+- Asansol
+- Aurangabad
+- Bareilly
+- Belgaum
+- Bhavnagar
+- Bhiwandi
+- Bhopal
+- Bhubaneswar
+- Bikaner
+- Bilaspur
+- Bokaro Steel City
+- Chandigarh
+- Coimbatore
+- Cuttack
+- Dehradun
+- Dhanbad
+- Bhilai
+- Durgapur
+- Dindigul
+- Erode
+- Faridabad
+- Firozabad
+- Ghaziabad
+- Gorakhpur
+- Gulbarga
+- Guntur
+- Gwalior
+- Gurgaon
+- Guwahati
+- Hamirpur
+- Hubli–Dharwad
+- Indore
+- Jabalpur
+- Jaipur
+- Jalandhar
+- Jammu
+- Jamnagar
+- Jamshedpur
+- Jhansi
+- Jodhpur
+- Kakinada
+- Kannur
+- Kanpur
+- Karnal
+- Kochi
+- Kolhapur
+- Kollam
+- Kozhikode
+- Kurnool
+- Ludhiana
+- Lucknow
+- Madurai
+- Malappuram
+- Mathura
+- Mangalore
+- Meerut
+- Moradabad
+- Mysore
+- Nagpur
+- Nanded
+- Nashik
+- Nellore
+- Noida
+- Patna
+- Pondicherry
+- Purulia
+- Prayagraj
+- Raipur
+- Rajkot
+- Rajahmundry
+- Ranchi
+- Rourkela
+- Salem
+- Sangli
+- Shimla
+- Siliguri
+- Solapur
+- Srinagar
+- Surat
+- Thanjavur
+- Thiruvananthapuram
+- Thrissur
+- Tiruchirappalli
+- Tirunelveli
+- Ujjain
+- Bijapur
+- Vadodara
+- Varanasi
+- Vasai-Virar City
+- Vijayawada
+- Visakhapatnam
+- Vellore
+- Warangal
+- ahmedabad
+- bengaluru
+- chennai
+- delhi
+- hyderabad
+- kolkata
+- mumbai
+- pune
+- agra
+- ajmer
+- aligarh
+- amravati
+- amritsar
+- asansol
+- aurangabad
+- bareilly
+- belgaum
+- bhavnagar
+- bhiwandi
+- bhopal
+- bhubaneswar
+- bikaner
+- bilaspur
+- bokaro steel city
+- chandigarh
+- coimbatore
+- cuttack
+- dehradun
+- dhanbad
+- bhilai
+- durgapur
+- dindigul
+- erode
+- faridabad
+- firozabad
+- ghaziabad
+- gorakhpur
+- gulbarga
+- guntur
+- gwalior
+- gurgaon
+- guwahati
+- hamirpur
+- hubli–dharwad
+- indore
+- jabalpur
+- jaipur
+- jalandhar
+- jammu
+- jamnagar
+- jamshedpur
+- jhansi
+- jodhpur
+- kakinada
+- kannur
+- kanpur
+- karnal
+- kochi
+- kolhapur
+- kollam
+- kozhikode
+- kurnool
+- ludhiana
+- lucknow
+- madurai
+- malappuram
+- mathura
+- mangalore
+- meerut
+- moradabad
+- mysore
+- nagpur
+- nanded
+- nashik
+- nellore
+- noida
+- patna
+- pondicherry
+- purulia
+- prayagraj
+- raipur
+- rajkot
+- rajahmundry
+- ranchi
+- rourkela
+- salem
+- sangli
+- shimla
+- siliguri
+- solapur
+- srinagar
+- surat
+- thanjavur
+- thiruvananthapuram
+- thrissur
+- tiruchirappalli
+- tirunelveli
+- ujjain
+- bijapur
+- vadodara
+- varanasi
+- vasai-virar city
+- vijayawada
+- visakhapatnam
+- vellore
+- warangal
 
 ## intent:email_id_send
 - yes. Please send it to [anshu5492@gmail.com](email)
