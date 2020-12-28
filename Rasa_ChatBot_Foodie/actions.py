@@ -4,10 +4,12 @@ from __future__ import unicode_literals
 
 from rasa_sdk import Action
 from rasa_sdk.events import SlotSet
+from rasa_sdk.events import AllSlotsReset
 import zomatopy
 import json
 import requests
 import ast
+import re
 
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -86,7 +88,10 @@ class ActionSearchRestaurants(Action):
                         highercost = 700
                 elif(budget == 'high'):
                         lowercost = 700
-                        highercost = 999999 
+                        highercost = 999999
+                else:
+                        lowercost = 0
+                        highercost = 999999
 
                 
                 results = restraunt_search_rating_order(lat, lon, str(cuisines_dict.get(cuisine)),lowercost, highercost)
@@ -130,7 +135,7 @@ class ActionVerifyLocation(Action):
 		tier2_cities = [name.lower() for name in tier2_cities]
 
 		if (city.lower() not in tier1_cities) and (city.lower() not in tier2_cities):
-			dispatcher.utter_message("sorry, we do not operate in that area yet")
+			dispatcher.utter_message("Sorry, we don’t operate in this city. Can you please specify some other location?")
 			city = None
 
 		return [SlotSet('location',city)]
@@ -143,10 +148,16 @@ class ActionSendDetailsToEmail(Action):
 		# Get slot of email id of user
 		email = tracker.get_slot('email')
 		# check if email id is of proper format
+		pattern = '([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)'
 		emailformatOk = True
-		
+		if (re.search(pattern, email)):
+			emailformatOk = True
+		else:
+			emailformatOk = False
+        
 		if emailformatOk == False:
-			dispatcher.utter_message("Please provide correct email address in form xxxxxxx@abc.com")
+			dispatcher.utter_message("Please provide correct email address in format xxxxxxx@abc.com/co.in")
+			email = None
 		else:
 			#The mail addresses and password
 			sender_address = 'anshumanshriwas.dml17@iiitb.net'
@@ -176,5 +187,28 @@ class ActionSendDetailsToEmail(Action):
 			session.quit()
 			dispatcher.utter_message("Email sent to " + email)
 
-		return
+		return [SlotSet('email',email)]
+
+class ActionVerifyCuisine(Action):
+	def name(self):
+		return 'action_verify_cuisine'
+
+	def run(self, dispatcher, tracker, domain):
+		# Get Cuisine               
+		cuisine = tracker.get_slot('cuisine')
+		cuisine_option_list = ['chinese', 'mexican', 'italian', 'american', 'south indian', 'north indian']
+		if cuisine.lower() not in cuisine_option_list:
+			cuisine = None        
+			dispatcher.utter_message("Please select from options 1. chinese 2.mexican 3.italian 4. american 5.south indian 6.north indian")
+
+		return [SlotSet('cuisine',cuisine)]
+		                          
+class ActionResetAllSlots(Action):
+	def name(self):
+		return 'action_reset_allslots'
+
+	def run(self, dispatcher, tracker, domain):
+		return [AllSlotsReset()]
+
+
 

@@ -1,0 +1,307 @@
+(rasa_installation) C:\Users\Z0039Dhd\Desktop\Learning\RASA\Rasa_ChatBot_Foodie>rasa shell
+2020-12-28 18:45:41 INFO     root  - Connecting to channel 'cmdline' which was specified by the '--connector' argument. Any other channels will be ignored. To connect to all given channels, omit the '--connector' argument.
+2020-12-28 18:45:41 INFO     root  - Starting Rasa server on http://localhost:5005
+2020-12-28 18:45:48 INFO     rasa.nlu.components  - Added 'SpacyNLP' to component cache. Key 'SpacyNLP-en'.
+2020-12-28 18:45:56 INFO     root  - Rasa server is up and running.
+Bot loaded. Type a message and press enter (use '/stop' to exit):
+Your input ->  Hi
+Hi, How can I help you!
+Your input ->  I want to eat north indian food in bombay
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  >700
+Showing you top rated north indian restaurants in Mumbai :
+1. Pa Pa Ya in Level 3, Palladium Mall, Senapati Bapat Marg, Lower Parel, Mumbai has been rated 4.9
+2. Shree Thaker Bhojanalay in 31, Dadisheth Agyari Lane, Off Kalbadevi Road, Kalbadevi, Mumbai has been rated 4.9
+3. Peshawri - ITC Maratha in ITC Maratha, Sahar Road, Chakala, Mumbai has been rated 4.9
+4. Bastian in B/1, New Kamal Building, Opposite National College, Linking Road, Bandra West, Mumbai has been rated 4.8
+5. Masala Library in Ground Floor, First International Financial Centre, Bandra Kurla Complex, Mumbai has been rated 4.8
+Should I send you details of all the restaurants on email?
+Your input ->  no
+Bye-bye
+Your input ->  Hola
+hey there! How may i help you
+Your input ->  Im hungry. Looking out for some good restaurants
+Please specify your location?
+Your input ->  bengaluru
+What kind of cuisine would you prefer?
+- Chinese
+- Mexican
+- Italian
+- American
+- South Indian
+- North Indian
+Your input ->  I will prefer chinese
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  300-700 range
+Showing you top rated Chinese restaurants in bengaluru :
+1. Meghana Foods in 57/1, 1st Floor, Jayalaxmi Chambers, Near Old Galaxy Theatre, Residency Road, Bangalore has been rated 4.5
+2. Dorothy's Kitchen in Near Lakshmi Narasimha Temple, Bommanahalli, Bangalore has been rated 4.5
+3. Al Meezaj in 385, 7th Cross, 2nd Stage, BTM, Bangalore has been rated 4.5
+4. Peoples Choice Food And Beverage in 3, B Narayanpura, 1st Main, Behind HP Campus, Whitefield Main Road, Whitefield, Bangalore has been rated 4.5
+5. Fu Manchu in Marathahalli, Bangalore has been rated 4.5
+Do you want to forward details over email?
+Your input ->  yes. please send to anshu5492@gmail.com
+Email sent to anshu5492@gmail.com
+Your input ->  thanks
+goodbye :(
+Your input ->  Hey
+Hey, How is it going How May I help you Today
+Your input ->  Can you suggest some good restaurants in Rishikesh
+Sorry, we don’t operate in this city. Can you please specify some other location?
+Your input ->  Okay. Show me some in Allahabad
+What kind of cuisine would you prefer?
+- Chinese
+- Mexican
+- Italian
+- American
+- South Indian
+- North Indian
+Your input ->  Ill prefer chines
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  >700
+Showing you top rated Chinese restaurants in Prayagraj :
+1. El Chico in 142A, 32, Mahatma Gandhi, Civil Lines, Allahabad has been rated 4.5
+2. EDEN by Connoisseur in Hotel Samrat, Civil Lines, Allahabad has been rated 4.5
+3. Sagar Ratna in 3/3, Hashimpur Road, Balson Crossing, Near Anand Bhawan, Tagore Town, Allahabad has been rated 4.4
+4. Pind Balluchi in 48/8, Stratchy Road, Civil Lines, Allahabad has been rated 4.3
+5. Old School Cafe in 2nd Floor, 9-10 Tulsiani Grace, Civil Lines, Allahabad has been rated 4.2
+Should I send you details of all the restaurants on email?
+Your input ->  yes, please forward to anshu5492@gmail.com
+Email sent to anshu5492@gmail.com
+Your input ->  bye
+goodbye :(
+Your input ->  Hi
+hey there! How may i help you
+Your input ->  Can you suggest some good restaurants in kolkata
+What kind of cuisine would you prefer?
+- Chinese
+- Mexican
+- Italian
+- American
+- South Indian
+- North Indian
+Your input ->  american
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  <300
+Showing you top rated american restaurants in kolkata :
+1. Solid Gulp (Bapi Dar Momo) in Karunamoyee Bus Stop, Sector 2, Salt Lake has been rated 4.9
+2. Girish Chandra Dey & Nakur Chandra Nandy in 56, Ramdulal Sarkar Street, Hedua Park, Hatibagan, Kolkata has been rated 4.9
+3. Khushi & Vishal Food Store in 22, Vivekananda Road, Below Peter Abashan, South Dumdum, Dum Dum, Kolkata has been rated 4.8
+4. Pabrai's Fresh and Naturelle Ice Cream in 28, Sarat Bose Road, Chakraberia, Ballygunge, Kolkata has been rated 4.6
+5. Kookie Jar in City Centre 1, Ground Floor, Sector 1, Salt Lake, Kolkata has been rated 4.6
+Should I send you details of all the restaurants on email?
+Your input ->  no
+Bye-bye
+Your input ->  Hello!
+Hey, How is it going How May I help you Today
+Your input ->  Im hungry. Looking out for some good restaurants
+Please specify your location?
+Your input ->  in mubaim
+Sorry, we don’t operate in this city. Can you please specify some other location?
+Your input ->  in Mumbai
+What kind of cuisine would you prefer?
+- Chinese
+- Mexican
+- Italian
+- American
+- South Indian
+- North Indian
+Your input ->  north indian
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  <300
+Showing you top rated north indian restaurants in Mumbai :
+1. Hotel Ram Ashraya in Bhandarkar Road, Matunga East, Mumbai has been rated 4.9
+2. K. Rustom Ice Cream in 87 Stadium House, Opposite Ambassador Hotel, Veer Nariman Road, Churchgate, Mumbai has been rated 4.9
+3. B Merwan & Co in Alibhai Premji Road, Grant Road East, Opposite Station, Grant Road, Mumbai has been rated 4.9
+4. Mahavir Sweets And Farsan in Shop 2, Rajshree Plaza, L.B.S Marg, Opposite Helix Mall, Ghatkopar West, Mumbai has been rated 4.9
+5. Cafe Madras in 38 B, Circle House, King's Circle Near Maheshwari Udyan, Matunga East, Mumbai has been rated 4.8
+Do you want to forward details over email?
+Your input ->  yes
+Please specify your email address
+Your input ->  anshu5492@gmal.com
+Email sent to anshu5492@gmal.com
+Your input ->  thanks
+Bon Appetit!
+Your input ->  Hello!
+hey there! How may i help you
+Your input ->  Im hungry. Looking out for some good chinese restaurants in chandigarh
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  <300
+Showing you top rated Chinese restaurants in chandigarh :
+1. Haandi Dum in Booth 27, Phase 11, Mohali has been rated 4.2
+2. Swaadedesi in SCF 28, Ground Floor, Inner Market, Sector 8, Chandigarh has been rated 4.2
+3. Urban Hands in Plot 98, Phase 1, Chandigarh Industrial Area, Chandigarh has been rated 4.2
+4. Roti Tukk in Shop 3, Lohgarh Road, Sigma City Chowk, Near Vishkarma Mandir, Lohgarh, Zirakpur has been rated 4.2
+5. The Yellow Turban in Phase 7, Mohali has been rated 4.2
+Do you want to forward details over email?
+Your input ->  no.thanks
+Please select from options 1. chinese 2.mexican 3.italian 4. american 5.south indian 6.north indian
+Your input ->  no
+Bye-bye
+Your input ->  Hi
+Hey, How is it going How May I help you Today
+Your input ->  I want to grab something
+Please specify your location?
+Your input ->  mirzapur
+Sorry, we don’t operate in this city. Can you please specify some other location?
+Your input ->  bombay
+What kind of cuisine would you prefer?
+- Chinese
+- Mexican
+- Italian
+- American
+- South Indian
+- North Indian
+Your input ->  thai
+Please select from options 1. chinese 2.mexican 3.italian 4. american 5.south indian 6.north indian
+Your input ->  chinese
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  >700
+Showing you top rated Chinese restaurants in Mumbai :
+1. Pa Pa Ya in Level 3, Palladium Mall, Senapati Bapat Marg, Lower Parel, Mumbai has been rated 4.9
+2. Bastian in B/1, New Kamal Building, Opposite National College, Linking Road, Bandra West, Mumbai has been rated 4.8
+3. Masala Library in Ground Floor, First International Financial Centre, Bandra Kurla Complex, Mumbai has been rated 4.8
+4. JW Café - JW Marriott Mumbai Sahar in IA Project Road, Chhatrapati Shivaji International Airport, Chakala, Mumbai has been rated 4.8
+5. Burma  Burma in Near Mumbai University, Kothari House, Allana Centre Lane, MG Road, Fort, Mumbai has been rated 4.7
+Do you want to forward details over email?
+Your input ->  no
+goodbye :(
+Your input ->  Hi
+Hey, How is it going How May I help you Today
+Your input ->  I am looking for some restaurants in vapi
+In what location?
+Your input ->  vapi
+Sorry, we don’t operate in this city. Can you please specify some other location?
+Your input ->  ahmedabad
+What kind of cuisine would you prefer?
+- Chinese
+- Mexican
+- Italian
+- American
+- South Indian
+- North Indian
+Your input ->  thai
+Please select from options 1. chinese 2.mexican 3.italian 4. american 5.south indian 6.north indian
+Your input ->  american
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  >700
+Showing you top rated american restaurants in ahmedabad :
+1. Dravida - The Fern in Near Sola Overbridge, SG Highway, Sola, Ahmedabad has been rated 4.9
+2. Stuff's Food in Ground Floor, Sachett 3, Mirambica Road, Near Shankar Society, Naranpura, Ahmedabad has been rated 4.7
+3. Rajwadu in Near Jivraj Tolnaka, Ambaji Temple, Malav Talav, Vejalpur, Ahmedabad has been rated 4.6
+4. TG’s - The Oriental Grill - Hyatt in Near Vastrapur Lake, Vastrapur, Ahmedabad has been rated 4.6
+5. Greenscribe in Near Saibaba Temple, Aryamaan Awaas, D Block, Ramdevnagar, Bodakdev, Ahmedabad has been rated 4.6
+Do you want to forward details over email?
+Your input ->  no
+goodbye :(
+Your input ->  Hi
+Hi, How can I help you!
+Your input ->  South indian restaurants in muzaffarpur higher than 1000
+Sorry, we don’t operate in this city. Can you please specify some other location?
+Your input ->  chennai
+Showing you top rated South indian restaurants in chennai :
+1. AB's - Absolute Barbecues in 45, GN Chetty Road, T. Nagar, Chennai has been rated 4.8
+2. Avartana - ITC Grand Chola in ITC Grand Chola, 63, Mount Road, Guindy, Chennai has been rated 4.8
+3. AB's - Absolute Barbecues in Velachery Tharamani Link Road, Opposite TCS, Velachery, Chennai has been rated 4.7
+4. J.Hind - Grand By GRT Hotels in 120, Sir Thyagaraya Road, T. Nagar, Chennai has been rated 4.7
+5. Mezze in Old 19, New 4, Abhinav Center, Off Chamiers Road, Alwarpet, Chennai has been rated 4.6
+Should I send you details of all the restaurants on email?
+Your input ->  no
+goodbye :(
+Your input ->  North indian restaurant in Delhi in 300-700 range
+Showing you top rated North indian restaurants in Delhi :
+1. The Big Chill in 68-A, Khan Market, New Delhi has been rated 4.9
+2. The Big Chill in 35, Khan Market, New Delhi has been rated 4.9
+3. The Big Chill Cafe in First Floor, B 40, The Colonnade, Opposite Gate 2 Rajiv Chowk Metro Station, Connaught Place, New Delhi has been rated 4.8
+4. The Big Chill in 170B - 170C, DLF Avenue, Saket, New Delhi has been rated 4.8
+5. The Big Chill Cakery in 3B, Main Market, Khan Market, New Delhi has been rated 4.8
+Should I send you details of all the restaurants on email?
+Your input ->  yes
+To what email id should I send it to?
+Your input ->  anshuh5492@gmail.com
+Email sent to anshuh5492@gmail.com
+Your input ->  thanks
+Bon Appetit!
+Your input ->  Hi
+hey there! How may i help you
+Your input ->  I am looking for north indian food in bangalore
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  moderate
+Showing you top rated north indian restaurants in Bengaluru :
+1. BelgYum in 16 106/107, 1st Floor, Pheonix Market City, Main Road, Whitefield, Bangalore has been rated 4.9
+2. The Betel Leaf Co in 1/1, Chakravarthy Iyengar Layout, 2nd Main, Kumara Park West, Seshadripuram, Bangalore has been rated 4.9
+3. Ooty Chocolates in 2, 100 Feet Road, 8th Main, Koramangala 4th Block, Bangalore has been rated 4.8
+4. Milano Ice Cream in 460, 2nd Cross, Krishna Temple Road, Indiranagar, Bangalore has been rated 4.7
+5. Lot Like Crepes in 203, 1st Main, Koramangala 7th Block, Bangalore has been rated 4.7
+Do you want to forward details over email?
+Your input ->  no
+goodbye :(
+Your input ->  Hi
+hey there! How may i help you
+Your input ->  I want to eat south indian food in dilli
+What's the average budget for two people?
+- Lesser than Rs. 300
+- Rs. 300 to 700
+- More than 700
+Your input ->  300-700 range
+Showing you top rated south indian restaurants in Delhi :
+1. The Big Chill in 68-A, Khan Market, New Delhi has been rated 4.9
+2. The Big Chill in 35, Khan Market, New Delhi has been rated 4.9
+3. The Big Chill Cafe in First Floor, B 40, The Colonnade, Opposite Gate 2 Rajiv Chowk Metro Station, Connaught Place, New Delhi has been rated 4.8
+4. The Big Chill in 170B - 170C, DLF Avenue, Saket, New Delhi has been rated 4.8
+5. The Big Chill Cakery in 3B, Main Market, Khan Market, New Delhi has been rated 4.8
+Should I send you details of all the restaurants on email?
+Your input ->  yes
+Please specify your email address
+Your input ->  anshu5492@gmail.com
+Email sent to anshu5492@gmail.com
+Your input ->  thanks
+Bye-bye
+Your input ->  Hi
+Hi, How can I help you!
+Your input ->  Show me a highend place in ahmedabad
+What kind of cuisine would you prefer?
+- Chinese
+- Mexican
+- Italian
+- American
+- South Indian
+- North Indian
+Your input ->  chinese
+Showing you top rated Chinese restaurants in ahmedabad :
+1. TG’s - The Oriental Grill - Hyatt in Near Vastrapur Lake, Vastrapur, Ahmedabad has been rated 4.6
+2. 650 - The Global Kitchen in Near Golden Tulip Bunglows & Tulip Citadel, Shreekunj Mandapam, Rajivnagar, Ayojan Nagar, Ambavadi, Ahmedabad has been rated 4.5
+3. Lollo Rosso in Shop 2, Ground Floor, Aeon Complex, Opposite Navkar Institute, Navrangpura, Ahmedabad has been rated 4.5
+4. Tinello - Hyatt Regency in 17/A, Usmanpura, Ashram Road, Ahmedabad has been rated 4.5
+5. China House - Hyatt Regency in 17 A, Near Ashram Road, Ahmedabad has been rated 4.5
+Should I send you details of all the restaurants on email?
+Your input ->  no
+goodbye :(
+Your input ->
